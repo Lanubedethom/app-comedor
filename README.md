@@ -1,6 +1,6 @@
 # App-Comedor
 
-App-Comedor es un sistema de gestión de comedores escolares que permite registrar y consultar los datos de los alumnos, los menús, los pagos y las asistencias.
+App-Comedor es una simulación del comedor público universitario que permite registrar y consultar los datos de los alumnos, el sistema de pagos y las asistencias.
 
 ## Requisitos previos
 
@@ -8,7 +8,7 @@ Para ejecutar este programa, necesitas tener instalado lo siguiente:
 
 - Node.js 14.x o superior
 - npm 6.x o superior
-- PostgreSQL 13.x o superior
+- PostgreSQL 13.x o superior o cualquier otro gestor de BBDD que soporte prisma
 
 ## Instalación
 
@@ -38,7 +38,7 @@ cd client && npm install
 cd server && npm install
 ```
 
-5. Crea una base de datos PostgreSQL vacía y configura las variables de entorno en el archivo `.env` del servidor con los datos de conexión.
+5. Crea una base de datos PostgreSQL vacía y configura las variables de entorno en el archivo `.env` del servidor con los datos de conexión. 
 
 6. Ejecuta las migraciones de la base de datos usando el comando:
 
@@ -51,6 +51,15 @@ npx prisma migrate dev --preview-feature
 ```bash
 npx prisma generate
 ```
+
+8. . Si estas usando otro SGBD, tienes que cambiar las configuraciones de `schema.prisma`
+```schema.prisma
+datasource db {
+  provider = "nombreSGBD"
+  url      = env("DATABASE_URL")
+}
+```
+Luego modificar la variable de entorno `DATABASE_URL ` en `.env` para la SGBD que estas usando.
 
 ## Ejecución
 
@@ -76,7 +85,7 @@ npm run dev
 
 4. Abre un navegador web y accede a la dirección:
 
-[http://localhost:3000/](^1^)
+ `http://localhost:numeroDePuerto/`
 
 5. Explora las funcionalidades del sistema.
 
@@ -84,10 +93,7 @@ npm run dev
 
 Aquí puedes ver algunos ejemplos de uso del sistema:
 
-- Para registrar un nuevo alumno, haz clic en el botón "Añadir alumno" y rellena el formulario con los datos solicitados.
-- Para consultar los menús disponibles, haz clic en el botón "Menús" y verás una lista con los platos y los precios.
-- Para registrar un pago, haz clic en el botón "Pagos" y selecciona el alumno, el mes y el importe.
-- Para registrar una asistencia, haz clic en el botón "Asistencias" y selecciona el alumno, la fecha y el menú.
+- Para...
 
 ## Licencia
 
@@ -95,7 +101,7 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](^2^) par
 
 ## Créditos
 
-Este proyecto fue creado por [Lanubedethom](^3^) como parte del curso de Desarrollo Web con JavaScript y Node.js.
+Este proyecto fue creado por [Lanubedethom](^3^) como parte del curso de Metodologías del Desarrollo del Software
 
 ## Contacto
 

@@ -1,0 +1,46 @@
+.toggle-button {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 15px 15px 0 0;
+    width: 160px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.toggle-first-button {
+    background-color: #ecf0f5;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.toggle-second-button {
+    background-color: #ecf0f5;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.toggle-first-button:hover {
+    background-color: #551A8B;
+    color: #ecf0f5;
+}
+
+.toggle-second-button:hover {
+    background-color: #551A8B;
+    color: #ecf0f5;
+}
+
+
+

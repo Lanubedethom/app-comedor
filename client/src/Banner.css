@@ -1,0 +1,9 @@
+.Banner {
+    background-color: #8b0000; /* Color vino tinto */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 97vh; /* Ocupa la mitad del ancho del viewport */
+}

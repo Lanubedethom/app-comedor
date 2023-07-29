@@ -1,0 +1,93 @@
+.form-wrapper {
+    height: 30%;
+    width: 40%;
+    background: #1a2226;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.form-wrapper-admin {
+    height: 40%;
+    width: 40%;
+    background: #1a2226;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.title-form {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ecf0f5;
+    margin-bottom: 40px;
+}
+
+.form-student {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control-label {
+    font-size: 14px;
+    color: #6c6c6c;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    background-color: #1a2226;
+    border: none;
+    border-bottom: 2px solid #0db8de;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    padding-top:15px;
+    margin-bottom: 20px;
+    color: #ecf0f5;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #0db8de;
+}
+
+.error-student_code {
+    color: #ff5b5b;
+    font-size: 12px;
+}
+
+.loginbttm {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid #0db8de;
+    color: #0db8de;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0db8de;
+    color: #ffff;
+}
+
+
+/*-------------------------------------BOTóN DOBLE---------------------------*/
+
+
+
+

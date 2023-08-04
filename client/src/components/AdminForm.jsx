@@ -1,20 +1,21 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import {useAuth} from "../context/authContext.jsx";
 import {useNavigate} from "react-router-dom";
+import { loginRequest } from "../api/auth.js";
 
 const AdminForm = () => {
-    const { signin, isAuthenticated } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (values, { setSubmitting }) => {
         try {
-            await signin({
-                user: values.user,
+            const response = await loginRequest({
+                email: values.email,
                 password: values.password
-            });
-            if (isAuthenticated) {
-                navigate("/statistics");
+            })
+            if (response.data.status === 401) {
+                alert(response.data.message)
+            } else {
+                navigate('/statistics')
             }
         } catch (error) {
             console.log(error);
@@ -23,16 +24,18 @@ const AdminForm = () => {
         }
     };
 
+    //resto del codigo
+
     return (
         <div className="form-wrapper-admin">
             <h2 className="title-form">ADMIN SESÍON</h2>
             <Formik
                 initialValues={{
-                    user: '',
+                    email: '',
                     password: ''
                 }}
                 validationSchema={Yup.object({
-                    user: Yup.string()
+                    email: Yup.string()
                         .required("Requerido"),
                     password: Yup.string()
                         .required('Requerido')
@@ -41,17 +44,17 @@ const AdminForm = () => {
             >
                 <Form className="form-student">
                     <div className="form-group">
-                        <label htmlFor="user" className="form-control-label">
-                            USUARIO
+                        <label htmlFor="email" className="form-control-label">
+                            EMAIL
                         </label>
                         <Field
-                            name="user"
+                            name="email"
                             type="text"
                             className="form-control"
-                            placeholder="Ingresa tu usuario"
+                            placeholder="Ingresa tu email"
                         />
                         <ErrorMessage
-                            name="user"
+                            name="email"
                             component="div"
                             className="error-student_code"
                         />

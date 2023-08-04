@@ -17,16 +17,16 @@ export const AuthProvider = ({ children }) => {
     const signin = async (user) => {
         try {
             const response = await loginRequest(user);
+            console.log(response.data)
             setUser(response);
             setIsAuthenticated(true)
         } catch (error) {
-            console.log(error);
-            setErrors(error.response.data)
+            //console.log(error);
+            setErrors(error.message)
         }
     }
 
     const logout = () => {
-        Cookies.remove('token');
         setUser(null);
         setIsAuthenticated(false);
     }

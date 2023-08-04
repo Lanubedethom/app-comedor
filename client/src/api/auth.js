@@ -7,8 +7,8 @@ const instance = axios.create({
 export const loginRequest = async (user) => {
     try {
         const response = await instance.post('/auth/login', user);
-        console.log(response.data)
-        return response.data;
+        console.log(response)
+        return response;
     } catch (error) {
         throw new Error(error.message);
     }

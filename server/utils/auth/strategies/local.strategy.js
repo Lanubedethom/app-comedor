@@ -4,6 +4,7 @@ import boom from "@hapi/boom";
 import bcrypt from "bcrypt";
 
 const service = new UserService();
+
 export const localStrategy = new Strategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -11,17 +12,18 @@ export const localStrategy = new Strategy({
     try {
         const user = await service.findByEmail(email);
         if (!user) {
-            done(boom.unauthorized(), false);
+            return done(null, false, { message: 'The email does not exist' });
         }
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
-            done(boom.unauthorized(), false);
+            return done(null, false, { message: 'The password is incorrect' });
         }
         delete user.password;
-        done(null, user);
+        return done(null, user);
     } catch (error) {
-        done(error, false);
+        return done(error);
     }
 });
+
 
 

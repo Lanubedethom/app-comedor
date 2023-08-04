@@ -1,7 +1,37 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { bookRequest } from "../api/auth.js";
+
 
 const StudentForm = () => {
+
+    const handleReservation = async (values, { setSubmitting }) => {
+        try {
+            const res = await bookRequest({ code: values.codigo })
+            console.log(res)
+            switch (res.data.status) {
+                case 200:
+                    alert(res.data.message);
+                    break;
+                case 404:
+                    alert(res.data.message);
+                    break;
+                case 409:
+                    alert(res.data.message);
+                    break;
+                default:
+                    alert('error inesperado')
+            }
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+
+    //resto del codigo
+
     return (
         <div className="form-wrapper">
             <h2 className="title-form">RESERVAR UN CUPO</h2>
@@ -15,12 +45,7 @@ const StudentForm = () => {
                         .min(6, "Debe tener un mínimo de 6 dígitos")
                         .required("Requerido"),
                 })}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                }}
+                onSubmit={ handleReservation }
             >
                 <Form className="form-student">
                     <div className="form-group">

@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar.jsx";
 import AdminForm from "../components/AdminForm.jsx";
 
-const Admin = () => {
+const LoginAdmin = () => {
     return (
         <div className='main-wrapper'>
             <Navbar/>
@@ -10,5 +10,5 @@ const Admin = () => {
     )
 }
 
-export default Admin;
+export default LoginAdmin;
 

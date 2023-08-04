@@ -9,7 +9,7 @@ const Navbar = () => {
             <Link to='/' className='toggle-first-button'>
                 <AiFillHome className='icon-house'/>
             </Link>
-            <Link to='/admin' className='toggle-second-button'>
+            <Link to='/login' className='toggle-second-button'>
                 <MdAdminPanelSettings/>
             </Link>
         </div>

@@ -1,7 +1,28 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import {useAuth} from "../context/authContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 const AdminForm = () => {
+    const { signin, isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+
+    const handleSubmit = async (values, { setSubmitting }) => {
+        try {
+            await signin({
+                user: values.user,
+                password: values.password
+            });
+            if (isAuthenticated) {
+                navigate("/statistics");
+            }
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
     return (
         <div className="form-wrapper-admin">
             <h2 className="title-form">ADMIN SESÍON</h2>
@@ -16,12 +37,7 @@ const AdminForm = () => {
                     password: Yup.string()
                         .required('Requerido')
                 })}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                }}
+                onSubmit={ handleSubmit }
             >
                 <Form className="form-student">
                     <div className="form-group">

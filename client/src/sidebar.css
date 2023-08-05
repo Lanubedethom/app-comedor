@@ -1,0 +1,43 @@
+.links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+    color: #ffff;
+}
+
+.links a:hover {
+    border-radius: 5px;
+    margin: 0 20px;
+    background: #0db8de;
+    color: #ffff;
+}
+.links a svg {
+    font-size: 1.5rem;
+    color: #ffff;
+    margin-right: 1rem;
+}
+.links a:hover svg {
+    color: #ffff;
+}
+
+.sidebar {
+    padding: 30px 20px 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background: #1a2226;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    box-shadow: 0 0 10px #1a2226; /*el mejor ajuste*/
+}
+
+.icon-admin {
+    margin: auto;
+    color: #ffff;
+    font-size: 3rem;
+}

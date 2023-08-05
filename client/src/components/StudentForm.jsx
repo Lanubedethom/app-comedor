@@ -57,6 +57,7 @@ const StudentForm = () => {
                             type="text"
                             className="form-control"
                             placeholder="Ingresa tu código"
+                            autoComplete="off"
                         />
                         <ErrorMessage
                             name="codigo"

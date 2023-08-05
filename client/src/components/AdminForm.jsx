@@ -52,6 +52,7 @@ const AdminForm = () => {
                             type="text"
                             className="form-control"
                             placeholder="Ingresa tu email"
+                            autoComplete="off"
                         />
                         <ErrorMessage
                             name="email"

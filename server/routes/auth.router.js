@@ -28,20 +28,6 @@ router.post('/login', (req, res, next) => {
     })(req, res, next);
 });
 
-router.post('/logoutt', async (req, res, next) => {
-    try {
-        res.cookie("token", "", {
-            httpOnly: true,
-            secure: true,
-            expires: new Date(0),
-        });
-
-        return res.status(200).json({ message: 'Logout successful' });
-    } catch (error) {
-        next(error)
-    }
-})
-
 router.post('/logout', function(req, res, next) {
     req.logout(function(err) {
         if (err) { return next(err); }

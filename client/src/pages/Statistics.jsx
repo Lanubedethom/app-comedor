@@ -1,8 +1,9 @@
+import Sidebar from "../components/Sidebar.jsx";
+import '../sidebar.css'
+
 const Statistics = () => {
     return (
-        <div>
-            Estadisticas del admin
-        </div>
+        <Sidebar/>
     )
 };
 

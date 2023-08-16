@@ -1,26 +1,29 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import {useState} from "react";
 import * as Yup from "yup";
 import { bookRequest } from "../api/auth.js";
+import { BiSolidDish } from 'react-icons/bi';
+import Ventana from "./Ventana.jsx";
 
 
 const StudentForm = () => {
 
+    const [mostrarVentana, setMostrarVentana] = useState(false);
+    const [ventanaMensaje, setVentanaMensaje] = useState('');
+
     const handleReservation = async (values, { setSubmitting }) => {
         try {
-            const res = await bookRequest({ code: values.codigo })
-            console.log(res)
+            const res = await bookRequest({ code: values.codigo });
             switch (res.data.status) {
                 case 200:
-                    alert(res.data.message);
-                    break;
                 case 404:
-                    alert(res.data.message);
-                    break;
                 case 409:
-                    alert(res.data.message);
+                    setVentanaMensaje(res.data.message);
+                    setMostrarVentana(true);
                     break;
                 default:
-                    alert('error inesperado')
+                    setVentanaMensaje('Error inesperado');
+                    setMostrarVentana(true);
             }
         } catch (error) {
             console.log(error);
@@ -29,12 +32,19 @@ const StudentForm = () => {
         }
     };
 
+    const cerrarVentana = () => {
+        setMostrarVentana(false);
+    };
+
 
     //resto del codigo
 
     return (
         <div className="form-wrapper">
-            <h2 className="title-form">RESERVAR UN CUPO</h2>
+            <div className="header-form">
+                <h2 className="title-form">RESERVAR UN CUPO</h2>
+                <BiSolidDish className="diner-icon" />
+            </div>
             <Formik
                 initialValues={{
                     codigo: "",
@@ -75,6 +85,7 @@ const StudentForm = () => {
                     </div>
                 </Form>
             </Formik>
+            {mostrarVentana && <Ventana mensaje={ventanaMensaje} onClose={cerrarVentana} />}
         </div>
     );
 };

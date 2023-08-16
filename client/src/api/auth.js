@@ -7,7 +7,6 @@ const instance = axios.create({
 export const loginRequest = async (user) => {
     try {
         const response = await instance.post('/auth/login', user);
-        console.log(response)
         return response;
     } catch (error) {
         throw new Error(error.message);
@@ -18,6 +17,24 @@ export const loginRequest = async (user) => {
 export const bookRequest = async (code) => {
     try {
         const response = await instance.post('/book', code);
+        return response;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export const resetBooked = async () => {
+    try {
+        const response = await instance.post('/auth/reset');
+        return response;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export const getDiners = async () => {
+    try {
+        const response = await instance.get('/students/diner');
         return response;
     } catch (error) {
         throw new Error(error.message);

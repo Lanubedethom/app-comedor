@@ -2,6 +2,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {useNavigate} from "react-router-dom";
 import { loginRequest } from "../api/auth.js";
+import { MdAdminPanelSettings } from 'react-icons/md';
 
 const AdminForm = () => {
     const navigate = useNavigate();
@@ -28,7 +29,10 @@ const AdminForm = () => {
 
     return (
         <div className="form-wrapper-admin">
-            <h2 className="title-form">ADMIN SESÍON</h2>
+            <div className="header-form">
+                <h2 className="title-form">ADMIN SESÍON</h2>
+                <MdAdminPanelSettings className="diner-icon" />
+            </div>
             <Formik
                 initialValues={{
                     email: '',

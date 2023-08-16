@@ -11,21 +11,18 @@ datasource db {
 }
 
 model Student {
-  id Int @id @default(autoincrement())
-  name String @db.VarChar(255)
-  surname String @db.VarChar(255)
-  code String @db.VarChar(6) @unique
-  career String @db.VarChar(255)
-  diner Boolean @default(false)
+  id      Int     @id @default(autoincrement())
+  name    String  @db.VarChar(255)
+  surname String  @db.VarChar(255)
+  code    String  @unique @db.VarChar(6)
+  career  String  @db.VarChar(255)
+  diner   Boolean @default(false)
 }
 
 model User {
-  Id Int @id @default(autoincrement())
-  username String @db.VarChar(255) @unique
-  email String @db.VarChar(255) @unique
+  Id       Int    @id @default(autoincrement())
+  username String @unique @db.VarChar(255)
+  email    String @unique @db.VarChar(255)
   password String @db.VarChar(255)
-  role String @db.VarChar(100)
+  role     String @db.VarChar(100)
 }
-
-
-

@@ -3,6 +3,8 @@ import { FiLogOut } from 'react-icons/fi';
 import { AiOutlineSetting, AiOutlineBarChart } from 'react-icons/ai';
 import { BsCardChecklist } from 'react-icons/bs';
 import { MdCleaningServices } from 'react-icons/md';
+import {useAdmin} from "../context/adminContext.jsx";
+
 
 export const links = [
     {
@@ -10,14 +12,17 @@ export const links = [
         url: '/statistics',
         text: 'Inicio',
         icon: <FaHome />,
-        accion: () => {alert("pagina de inicio")}
+        accion: () => {
+            console.log("inicio")}
     },
     {
         id: 2,
-        url: '/statistics',
+        url: 'listbook',
         text: 'Listar Beneficiados',
         icon: <BsCardChecklist />,
-        accion: () => {alert("listar beneficiados")}
+        accion: () => {
+            console.log('listar beneficiados')
+        }
     },
     {
         id: 3,
@@ -31,7 +36,10 @@ export const links = [
         url: '/statistics',
         text: 'Limpiar cupos',
         icon: <MdCleaningServices />,
-        accion: () => {alert("limpiar cupos")}
+        accion: () => {
+            const { setMostrarVentanaConfirmacion } = useAdmin();
+            setMostrarVentanaConfirmacion(true);
+        }
     },
     {
         id: 5,

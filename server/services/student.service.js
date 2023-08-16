@@ -16,6 +16,14 @@ export class StudentService {
         return student;
     }
 
+    async findByDiner() {
+        const diners = await prisma.student.findMany({
+            where: { diner: true }
+        })
+
+        return diners
+    }
+
     async create(data) {
         return await prisma.student.create({ data });
     }

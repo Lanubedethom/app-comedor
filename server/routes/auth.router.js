@@ -2,6 +2,10 @@ import { Router } from "express";
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import { configure } from "../config/config.js";
+import { checkRoles } from "../middleware/auth.handler.js";
+import { BookService } from "../services/book.service.js";
+
+const service = new BookService();
 
 const router = Router();
 
@@ -34,6 +38,17 @@ router.post('/logout', function(req, res, next) {
         res.redirect('/');
     });
 });
+
+router.post(
+    '/reset',
+    async (req, res, next) => {
+        try {
+            await service.resetBook();
+            res.json({ status: 200, message: 'book empty'})
+        } catch (error) {
+            next(error);
+        }
+    })
 
 export default router;
 

@@ -44,4 +44,12 @@ export class BookService {
 
     }
 
+    async resetBook() {
+        await prisma.student.updateMany({
+            data: {
+                diner: false
+            }
+        })
+    }
+
 }

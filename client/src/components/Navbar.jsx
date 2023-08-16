@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
 import { MdAdminPanelSettings } from 'react-icons/md';
-import '../Navbar.css'
 
 const Navbar = () => {
     return (

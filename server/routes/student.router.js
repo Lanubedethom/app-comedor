@@ -9,14 +9,21 @@ const router = Router();
 const service = new StudentService();
 
 router.get('/',
-    passport.authenticate('jwt', { session: false }),
-    checkRoles('administrador', 'cocinero', 'seguridad'),
     async (req, res, next) => {
     try {
         const response = await service.find();
         res.json(response);
     } catch (error) {
         next(error)
+    }
+})
+
+router.get('/diner', async (req, res, next) => {
+    try {
+        const response = await service.findByDiner();
+        res.json(response);
+    } catch (error) {
+        next(error);
     }
 })
 

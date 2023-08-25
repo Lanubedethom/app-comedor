@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint",
-    "start": "node index.js"
+    "start": "vercel start"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +25,8 @@
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
-    "pg": "^8.11.1"
+    "pg": "^8.11.1",
+    "vercel": "^32.1.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",

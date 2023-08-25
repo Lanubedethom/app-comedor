@@ -17,3 +17,29 @@ const Navbar = () => {
 
 export default Navbar;
 
+
+/*
+const Navbar = () => {
+    return (
+        <nav className='navbar-wrapper'>
+            <div>
+                <div>
+                    <button>
+                        <GiHamburgerMenu className='toggle-hamburger'/>
+                    </button>
+                </div>
+                <div>
+                    <ul>
+                        <Link to='/' className=''>
+                            Reservar
+                        </Link>
+                        <Link to='/login' className=''>
+                            Admin
+                        </Link>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    )
+}
+ */

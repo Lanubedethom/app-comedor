@@ -7,12 +7,21 @@ import { BsCardChecklist } from 'react-icons/bs';
 import { MdCleaningServices } from 'react-icons/md';
 import { useAdmin } from '../context/adminContext.jsx';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const Sidebar = () => {
     const { setMostrarVentanaConfirmacion } = useAdmin();
-    const [listLinks, setListLinks] = useState(false);
-    const [showSidebar, setShowSidebar] = useState(false)
+    const [showLinks, setShowLinks] = useState(false);
+    const linksContainerRef = useRef(null);
+    const linksRef = useRef(null);
+
+    useEffect(() => {
+        const linksHeight = linksRef.current.getBoundingClientRect().height;
+        if (showLinks)
+            linksContainerRef.current.style.height = `${linksHeight}px`
+        else
+            linksContainerRef.current.style.height = '0px';
+    }, [showLinks])
 
     const links = [
         {
@@ -72,27 +81,28 @@ const Sidebar = () => {
     ];
 
     const displayLinks = () => {
-        setListLinks(!listLinks)
-        setShowSidebar(!showSidebar);
+        setShowLinks(!showLinks);
     }
 
     return (
-        <aside className={showSidebar ? 'sidebar-toggle' : 'sidebar'}>
+        <aside className='sidebar'>
             <div className='header-icons-admin'>
                 <HiOutlineLightningBolt  className="icon-admin" />
                 <GiHamburgerMenu onClick={displayLinks} className='icon-hamburger' />
             </div>
-            <ul className={listLinks ? 'showListHamburger' : 'links'}>
-                {links.map((link) => {
-                    const { id, url, text, icon, accion } = link;
-                    return (
-                        <Link key={id} to={url} onClick={() => accion()}>
-                            {icon}
-                            {text}
-                        </Link>
-                    );
-                })}
-            </ul>
+            <div className='links-container' ref={linksContainerRef}>
+                <ul className={showLinks ? 'links showListContainer' : 'links'} ref={linksRef}>
+                    {links.map((link) => {
+                        const { id, url, text, icon, accion } = link;
+                        return (
+                            <Link className='links-item' key={id} to={url} onClick={() => accion()}>
+                                {icon}
+                                {text}
+                            </Link>
+                        );
+                    })}
+                </ul>
+            </div>
         </aside>
     );
 };

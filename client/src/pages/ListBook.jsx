@@ -8,7 +8,6 @@ const ListBook = () => {
     const showItems = async () => {
         try {
             const response = await getDiners();
-            console.log(response.data)
             setItems(response.data)
         } catch (error) {
             console.log(error);

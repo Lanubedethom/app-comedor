@@ -65,98 +65,12 @@ body {
     line-height: 1.5;
     font-size: 0.875rem;
 }
-ul {
-    list-style-type: none;
-}
-a {
-    text-decoration: none;
-}
-h1,
-h2,
-h3,
-h4 {
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-}
-h1 {
-    font-size: 3rem;
-}
-h2 {
-    font-size: 2rem;
-}
-h3 {
-    font-size: 1.25rem;
-}
-h4 {
-    font-size: 0.875rem;
-}
-p {
-    margin-bottom: 1.25rem;
-    color: var(--clr-grey-5);
-}
-@media screen and (min-width: 800px) {
-    h1 {
-        font-size: 4rem;
-    }
-    h2 {
-        font-size: 2.5rem;
-    }
-    h3 {
-        font-size: 1.75rem;
-    }
-    h4 {
-        font-size: 1rem;
-    }
-    body {
-        font-size: 1rem;
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-        line-height: 1;
-    }
-}
-.btn {
-    text-transform: uppercase;
-    background: transparent;
-    color: var(--clr-black);
-    padding: 0.375rem 0.75rem;
-    letter-spacing: var(--spacing);
-    display: inline-block;
-    transition: var(--transition);
-    font-size: 0.875rem;
-    border: 2px solid var(--clr-black);
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: var(--radius);
-}
-.btn:hover {
-    color: var(--clr-white);
-    background: var(--clr-black);
-}
 
-.section {
-    padding: 5rem 0;
-}
-
-.section-center {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: 35rem;
-    margin-top: 8rem;
-}
-@media screen and (min-width: 992px) {
-    .section-center {
-        width: 95vw;
-    }
-}
-main {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
+.header-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -169,7 +83,7 @@ FORMULARIO ESTUDIANTE
 
 .form-wrapper {
     height: 60%;
-    width: 40%;
+    width: 90%;
     background: var(--clr-grey-10);
     padding: 40px;
     border-radius: 5px;
@@ -177,33 +91,33 @@ FORMULARIO ESTUDIANTE
 }
 
 .form-wrapper-admin {
-    height: 60%;
-    width: 40%;
+    height: 70%;
+    width: 90%;
     background: var(--clr-grey-10);
     padding: 40px;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.header-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 .title-form {
-    font-size: 24px;
     font-weight: bold;
+    text-align: center;
     color: var(--clr-grey-2);
-    margin-bottom: 40px;
+    margin-bottom: 1rem;
 }
 
 .diner-icon {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: var(--clr-grey-2);
     margin-bottom: 10px;
+}
+
+.form-control-label {
+    font-size: 14px;
+    color: #6c6c6c;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .form-student {
@@ -213,13 +127,6 @@ FORMULARIO ESTUDIANTE
 
 .form-group {
     margin-bottom: 20px;
-}
-
-.form-control-label {
-    font-size: 14px;
-    color: #6c6c6c;
-    font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .form-control {
@@ -264,6 +171,48 @@ FORMULARIO ESTUDIANTE
     background-color: #00a7d1;
     color: #ffff;
 }
+
+.login-button {
+    width: 100%;
+}
+.btn {
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    .form-wrapper {
+        height: 60%;
+        width: 40%;
+    }
+
+    .form-wrapper-admin {
+        height: 60%;
+        width: 40%;
+    }
+
+    .header-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-form {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--clr-grey-2);
+        margin-bottom: 40px;
+    }
+
+    .diner-icon {
+        font-size: 24px;
+    }
+
+
+}
+
+
 
 /*
 ===============
@@ -384,12 +333,85 @@ SIDEBAR
     font-size: 3rem;
 }
 
+.icon-hamburger {
+    display: none;
+}
+
+.header-icons-admin {
+    display: flex;
+    width: 100%;
+}
+
+.showListHamburger a{
+    display: block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+    color: var(--clr-grey-2);
+    font-weight: bolder;
+}
+
+.showListHamburger a:first-child {
+    border-radius: 5px;
+    margin: 0 20px;
+    background: #0db8de;
+    color: var(--clr-grey-2);
+}
+
+.links a:hover {
+    border-radius: 5px;
+    margin: 0 20px;
+    background: #0db8de;
+    color: var(--clr-grey-2);
+}
+.showListHamburger a svg {
+    font-size: 1.5rem;
+    color: var(--clr-grey-2);
+    margin-right: 1rem;
+}
+.showListHamburger a:hover svg {
+    color: #ffff;
+}
+
+.sidebar-toggle {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
 @media (max-width: 768px) {
     .sidebar {
+        height: 20%;
         width: 100%;
         padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
+    .links a {
+        display: none;
+    }
+    .icon-hamburger {
+        display: block;
+    }
+    .header-icons-admin {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly
+
+    }
+
 }
+
+
+
+
 
 /*
 ===============

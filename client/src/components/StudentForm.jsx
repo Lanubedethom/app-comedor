@@ -77,11 +77,9 @@ const StudentForm = () => {
                     </div>
 
                     <div className="loginbttm">
-                        <div className="login-button">
                             <button type="submit" className="btn btn-outline-primary">
                                 ENVIAR
                             </button>
-                        </div>
                     </div>
                 </Form>
             </Formik>

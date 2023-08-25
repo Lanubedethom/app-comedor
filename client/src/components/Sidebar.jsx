@@ -6,9 +6,13 @@ import { AiOutlineSetting, AiOutlineBarChart } from 'react-icons/ai';
 import { BsCardChecklist } from 'react-icons/bs';
 import { MdCleaningServices } from 'react-icons/md';
 import { useAdmin } from '../context/adminContext.jsx';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import {useState} from "react";
 
 const Sidebar = () => {
     const { setMostrarVentanaConfirmacion } = useAdmin();
+    const [listLinks, setListLinks] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false)
 
     const links = [
         {
@@ -67,10 +71,18 @@ const Sidebar = () => {
         },
     ];
 
+    const displayLinks = () => {
+        setListLinks(!listLinks)
+        setShowSidebar(!showSidebar);
+    }
+
     return (
-        <aside className="sidebar">
-            <HiOutlineLightningBolt className="icon-admin" />
-            <ul className="links">
+        <aside className={showSidebar ? 'sidebar-toggle' : 'sidebar'}>
+            <div className='header-icons-admin'>
+                <HiOutlineLightningBolt  className="icon-admin" />
+                <GiHamburgerMenu onClick={displayLinks} className='icon-hamburger' />
+            </div>
+            <ul className={listLinks ? 'showListHamburger' : 'links'}>
                 {links.map((link) => {
                     const { id, url, text, icon, accion } = link;
                     return (

@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint",
-    "start": "node index.js",
-    "deploy": "vercel"
+    "build": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -36,3 +35,6 @@
     "prisma": "^5.2.0"
   }
 }
+
+
+

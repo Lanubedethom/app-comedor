@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint",
-    "build": "npm install && node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

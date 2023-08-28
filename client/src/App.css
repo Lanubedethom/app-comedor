@@ -87,25 +87,55 @@ FORMULARIO ESTUDIANTE
 ===============
  */
 
+.footer-container {
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem 18px;
+    border-top: 1px solid #dbdbdb;
+    background-color: #fafafa;
+    position: fixed;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-link {
+    color: #0db8de;
+    text-decoration: none;
+}
+.footer-link:hover {
+    color: #00a7d1;
+}
+
+.footer-user {
+    font-family: 'Pacifico', cursive;
+}
+
+.footer-text {
+    font-style: italic;
+}
+
 .form-wrapper {
-    height: 25rem;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     background: var(--clr-grey-10);
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 90px 40px 0 40px;
+   /* border-radius: 5px;*/
+   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
 }
 
 .form-wrapper-admin {
-    height: 25rem;
-    width: 90%;
+    height: 100%;
+    width: 100%;
+    padding: 90px 40px 0 40px;
     background: var(--clr-grey-10);
-    padding: 40px;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .title-form {
+    font-family: 'Pacifico', cursive;
     font-weight: bold;
     text-align: center;
     color: var(--clr-grey-2);
@@ -113,7 +143,7 @@ FORMULARIO ESTUDIANTE
 }
 
 .diner-icon {
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
     color: var(--clr-grey-2);
     margin-bottom: 10px;
@@ -190,6 +220,8 @@ FORMULARIO ESTUDIANTE
     .form-wrapper {
         height: 60%;
         width: 40%;
+        border-radius: 5px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     }
 
     .form-wrapper-admin {
@@ -503,32 +535,67 @@ VENTANA
 
 .ventana {
     position: relative;
-    background-color: white;
-    padding: 20px;
-    width: 70%;
-    height: 20%;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between; /* Alinear header, mensaje y footer */
+    background-color: #D8E4F1;
+    width: 80%;
+    height: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background-color: #CBDCF1;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .cerrar-btn {
-    background: none;
+    /*background: none;*/
+    /*border: none;*/
+    /*cursor: pointer;*/
+    /*position: absolute;*/
+    /*top: 10px;*/
+    /*right: 10px;*/
+    /*font-size: 20px;*/
+    /*color: #333;*/
+    background-color: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    color: #333;
+}
+.mensaje {
+    padding: 20px;
+    text-align: center;
 }
 
-.mensaje {
-    margin-bottom: 15px;
+.modal-footer {
+    background-color: #CBDCF1;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-modal {
+    background-color:#0db8de;
+    border: none;
+    color: #ffff;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.button-modal {
+    background-color: #00a7d1;
+    color: #ffff;
 }
 
 @media screen and (min-width: 768px) {

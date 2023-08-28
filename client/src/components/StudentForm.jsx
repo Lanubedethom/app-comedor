@@ -3,7 +3,11 @@ import {useState} from "react";
 import * as Yup from "yup";
 import { bookRequest } from "../api/auth.js";
 import { BiSolidDish } from 'react-icons/bi';
-import Ventana from "./Ventana.jsx";
+import Modal from "./Modal.jsx";
+import Footer from "./Footer.jsx";
+
+const modalTitle = 'Message'
+const modalBtnText = 'Got it'
 
 
 const StudentForm = () => {
@@ -42,8 +46,8 @@ const StudentForm = () => {
     return (
         <div className="form-wrapper">
             <div className="header-form">
-                <h2 className="title-form">RESERVAR UN CUPO</h2>
                 <BiSolidDish className="diner-icon" />
+                <h2 className="title-form">BOOK A SLOT</h2>
             </div>
             <Formik
                 initialValues={{
@@ -60,13 +64,13 @@ const StudentForm = () => {
                 <Form className="form-student">
                     <div className="form-group">
                         <label htmlFor="codigo" className="form-control-label">
-                            CÓDIGO
+                            CODE
                         </label>
                         <Field
                             name="codigo"
                             type="text"
                             className="form-control"
-                            placeholder="Ingresa tu código"
+                            placeholder="Enter your code"
                             autoComplete="off"
                         />
                         <ErrorMessage
@@ -78,12 +82,12 @@ const StudentForm = () => {
 
                     <div className="loginbttm">
                             <button type="submit" className="btn btn-outline-primary">
-                                ENVIAR
+                                BOOK
                             </button>
                     </div>
                 </Form>
             </Formik>
-            {mostrarVentana && <Ventana mensaje={ventanaMensaje} onClose={cerrarVentana} />}
+            {mostrarVentana && <Modal mensaje={ventanaMensaje} onClose={cerrarVentana} btnMessage={modalBtnText} title={modalTitle} />}
         </div>
     );
 };

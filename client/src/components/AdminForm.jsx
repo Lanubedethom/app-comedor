@@ -3,6 +3,8 @@ import * as Yup from "yup";
 import {useNavigate} from "react-router-dom";
 import { loginRequest } from "../api/auth.js";
 import { MdAdminPanelSettings } from 'react-icons/md';
+import Footer from "./Footer.jsx";
+
 
 const AdminForm = () => {
     const navigate = useNavigate();
@@ -30,8 +32,8 @@ const AdminForm = () => {
     return (
         <div className="form-wrapper-admin">
             <div className="header-form">
-                <h2 className="title-form">ADMIN SESÍON</h2>
                 <MdAdminPanelSettings className="diner-icon" />
+                <h2 className="title-form">ADMIN</h2>
             </div>
             <Formik
                 initialValues={{
@@ -55,7 +57,7 @@ const AdminForm = () => {
                             name="email"
                             type="text"
                             className="form-control"
-                            placeholder="Ingresa tu email"
+                            placeholder="Enter your email"
                             autoComplete="off"
                         />
                         <ErrorMessage
@@ -64,13 +66,13 @@ const AdminForm = () => {
                             className="error-student_code"
                         />
                         <label htmlFor="password" className="form-control-label">
-                            CONTRASEÑA
+                            PASSWORD
                         </label>
                         <Field
                             name="password"
                             type="password"
                             className="form-control"
-                            placeholder="Ingresa tu contraseña"
+                            placeholder="Enter your password"
                         />
                         <ErrorMessage
                             name="password"
@@ -86,6 +88,7 @@ const AdminForm = () => {
                             </button>
                         </div>
                     </div>
+                    <Footer/>
                 </Form>
             </Formik>
         </div>

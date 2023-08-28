@@ -1,13 +1,14 @@
-import Navbar from "../components/Navbar.jsx";
+//import Navbar from "../components/Navbar.jsx";
 //import Banner from "../components/Banner.jsx";
+import Footer from "../components/Footer.jsx";
 import StudentForm from "../components/StudentForm.jsx";
 import '../index.css'
 
 const Home = () => {
     return (
         <div className="main-wrapper">
-            <Navbar/>
             <StudentForm />
+            <Footer/>
         </div>
     );
 };

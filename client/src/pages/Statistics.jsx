@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Sidebar from "../components/Sidebar.jsx";
-import Ventana from "../components/Ventana.jsx";
+import Modal from "../components/Modal.jsx";
 import { useAdmin } from "../context/adminContext.jsx";
 
 
@@ -22,7 +22,7 @@ const Statistics = () => {
             <Outlet />
 
             {mostrarVentanaConfirmacion && (
-                <Ventana
+                <Modal
                     mensaje="¿Quieres limpiar todos los comensales?"
                     onClose={() => setMostrarVentanaConfirmacion(false)}
                 >
@@ -31,11 +31,11 @@ const Statistics = () => {
                         onClick={() => { limpiarCupos(); setMostrarVentanaConfirmacion(false); }}>
                         Aceptar
                     </button>
-                </Ventana>
+                </Modal>
             )}
 
             {mostrarVentanaResultado && (
-                <Ventana mensaje={resultadoMensaje} onClose={cerrarVentanaResultado} />
+                <Modal mensaje={resultadoMensaje} onClose={cerrarVentanaResultado} />
             )}
         </>
 )

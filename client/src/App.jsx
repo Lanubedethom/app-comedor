@@ -5,7 +5,7 @@ import NotFound from "./pages/NotFound.jsx";
 import { AuthProvider } from "./context/authContext.jsx";
 import { AdminProvider } from "./context/adminContext.jsx";
 import ListBook from "./pages/ListBook.jsx";
-import Statistics from "./pages/Statistics.jsx";
+import HomeAdmin from "./pages/HomeAdmin.jsx";
 import './App.css'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<LoginAdmin />} />
-                    <Route path='/statistics' element={<Statistics />}>
+                    <Route path='/statistics' element={<HomeAdmin />}>
                         <Route path='listbook' element={<ListBook />} />
                     </Route>
                     <Route path='*' element={<NotFound />} />

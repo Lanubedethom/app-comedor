@@ -2,7 +2,6 @@
 //import Banner from "../components/Banner.jsx";
 import Footer from "../components/Footer.jsx";
 import StudentForm from "../components/StudentForm.jsx";
-import '../index.css'
 
 const Home = () => {
     return (

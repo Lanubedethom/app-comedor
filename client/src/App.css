@@ -58,10 +58,6 @@ ESTILOS GLOBALES
     box-sizing: border-box;
 }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: var(--clr-primary-10);
-    color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
 }
@@ -74,6 +70,7 @@ body {
 }
 
 .main-wrapper {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,7 +91,7 @@ FORMULARIO ESTUDIANTE
     border-top: 1px solid #dbdbdb;
     background-color: #fafafa;
     position: fixed;
-    bottom: 5px;
+    bottom: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -114,6 +111,7 @@ FORMULARIO ESTUDIANTE
 
 .footer-text {
     font-style: italic;
+    font-family: "JetBrains Mono"
 }
 
 .form-wrapper {
@@ -130,8 +128,6 @@ FORMULARIO ESTUDIANTE
     width: 100%;
     padding: 90px 40px 0 40px;
     background: var(--clr-grey-10);
-    border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .title-form {
@@ -150,6 +146,7 @@ FORMULARIO ESTUDIANTE
 }
 
 .form-control-label {
+    font-family: 'Ubuntu Mono', monospace;
     font-size: 14px;
     color: #6c6c6c;
     font-weight: bold;
@@ -249,83 +246,6 @@ FORMULARIO ESTUDIANTE
 
 
 }
-
-
-
-/*
-===============
-NAVBAR
-===============
- */
-
-.navbar-wrapper {
-    height: 5rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.toggle-hamburger {
-    display: block;
-    color: var(--clr-grey-2);
-    font-size: 1.9rem;
-    transition: all 0.3s linear;
-}
-.toggle-button {
-    z-index: 9999;
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 15px 15px 0 0;
-    width: 160px;
-    height: 40px;
-    overflow: hidden;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.toggle-first-button {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:#0db8de;
-    border: none;
-    color: #ffff;
-    border-radius: 5px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-.toggle-second-button {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:#0db8de;
-    border: none;
-    color: #ffff;
-    border-radius: 5px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.toggle-first-button:hover {
-    background-color: #00a7d1;
-    color: #ecf0f5;
-}
-
-.toggle-second-button:hover {
-    background-color: #00a7d1;
-    color: #ecf0f5;
-}
-
 
 /*
 ===============
@@ -534,6 +454,7 @@ VENTANA
 }
 
 .ventana {
+    top: 0.05rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -619,7 +540,68 @@ VENTANA
 }
 
 
+/*
+===============
+ADMIN STUFF
+===============
+ */
 
+.admin-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fafafa;
+}
+
+.section-admin {
+    height: 100%;
+    /*width: 100%;*/
+    /*max-height: 100%;*/
+}
+
+.footer-container-admin  {
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem 18px;
+    border-top: 1px solid #dbdbdb;
+    background-color: #fafafa;
+    position: fixed;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container-admin {
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fafafa;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-right-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper-right-icons p {
+    margin-top: 0.3rem;
+    margin-left: 0.4rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.wrapper-left-icons span {
+    padding-left: 0.7rem;
+    font-size: 1.5rem;
+}
+
+.footer-icon-admin {
+    font-size: 1.5rem;
+}
 
 
 

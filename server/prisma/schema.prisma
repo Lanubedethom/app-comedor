@@ -12,7 +12,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL") // uses connection pooling
+  //url      = env("DATABASE_URL") // uses connection pooling, POR EL MOMENTO, SOLO DESCOMENTAR ESTO
   // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
